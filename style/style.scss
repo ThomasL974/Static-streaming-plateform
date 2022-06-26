@@ -1,0 +1,284 @@
+@font-face {
+    font-family: "DroidSerif";
+    src: url("../asset/font/Roboto-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "DroidSerif";
+    src: url("../asset/font/Roboto-Light.ttf") format("truetype");
+    font-weight: lighter;
+    font-style: normal;
+}
+$primary-color : #E7E7E7;
+$second-color : #032541;
+$side-padding : 5.100rem;
+$font-size : 1.025rem;
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: auto;
+}
+.container{
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-size;
+    font-weight: 400;
+    color: $second-color;
+    height: auto;
+    width: 100%;
+    &-tendances{
+        height: auto;
+        width: 100%;
+        padding: 2.4rem $side-padding;
+    }
+    &-populaires{
+        height: auto;
+        width: 100%;
+        padding: 2.4rem $side-padding;
+        background-color: $primary-color;
+    }
+    &-items{
+        display: flex;
+        align-items: center;
+        padding-bottom: 1.4rem;
+        flex-wrap: wrap;
+    }
+    &-items>&-group>div{
+        margin: 0 30px 0 0;
+    }
+    &-title{
+        font-size: 1.900rem;
+        margin: 0 30px 0 0;
+    }
+    &-btn{
+        width: 150px;
+        height: 40px;
+        border: 2px solid $second-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        color: $second-color;
+        background-color: white;
+        transition: all .2s linear;
+        &:hover{
+            color: $primary-color;
+            background-color: $second-color;
+        }
+    }
+    &-group{
+        display: flex;
+        align-items: center;
+    }
+
+}
+.active{
+    background-color: $second-color;
+    color: $primary-color;
+}
+.header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem $side-padding;
+    background-color: $second-color;
+    color: $primary-color;
+    position: relative;
+
+    &-icon>i{
+        font-size: 40px;
+    }
+    &-menu a{
+        text-decoration: none;
+        color: $primary-color;
+        margin: 0 0 0 15px;
+        font-weight: 700;
+        position: relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: $primary-color;
+            transition: width .2s linear;
+        }
+        &:hover::before{
+            width: 100%;
+        }
+    }
+    &-burger{
+        display: none;
+        width: 50px;
+        height: 50px;
+    }
+    &-burger>div{
+        width: 50px;
+        height: 4px;
+        background-color: $primary-color;
+        border-radius: 5px;
+    }
+}
+.search{
+    width: 100%;
+    height: 342px;
+    background-image: url('../asset/image/interstellar.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    opacity: 70%;
+    padding: $side-padding;
+    display: flex;
+    align-items: center;
+
+    &-bar{
+        width: 100%;
+        height: 69px;
+        background-color: $primary-color;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.235rem;
+    }
+    &-bar > i{
+        font-size: 30px;
+        cursor: pointer;
+    }
+    &-bar>input{
+        border: none;
+        background-color: $primary-color;
+        width: 100%;
+        line-height: 28px;
+        margin-right: 10px;
+        outline: none;
+        font-size: $font-size;
+    }
+}
+.card{
+    &-group{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &-image{
+        position: relative;
+    }
+    &-image > img{
+        transform: translate(0px, 0px);
+        cursor: pointer;
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
+        transition: all .2s linear;
+    }
+    &-image>img:hover{
+        transform: translate(-5px,-5px);
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+    }
+    &-pourcent{
+        position: absolute;
+        width: 63px;
+        height: 63px;
+        border: 2px solid white;
+        background-color: $second-color;
+        color: $primary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        bottom: -30px;
+        right: -30px;
+        z-index: 10000;
+    }
+    &-title{
+        font-weight: bold;
+    }
+    &-info{
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 811px) and (min-width: 376px) {
+    .header{
+        &-burger{
+            display: block;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        &-menu{
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 426px){
+    .header{
+        padding: 0.8rem 3.100rem;
+        &-burger{
+            display: block;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        &-menu{
+            display: none;
+        }
+    }
+    .search{
+        padding: 4.8rem 3.100rem;
+        background-image: none;
+        height: 50px;
+    }
+    .container{
+        &-populaires{
+            height: auto;
+            width: 100%;
+            padding: 2.4rem 3.100rem;
+            background-color: $primary-color;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &-tendances{
+            height: auto;
+            width: 100%;
+            padding: 2.4rem 3.100rem;
+        }
+        &-title{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            margin: 0 0 30px 0;
+        }
+        &-group{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &-items>&-group>div{
+            margin: 0 0 10px 0;
+        }
+        
+    }
+    .card-group{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script defer src="./script/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">
+                <i class="fas fa-film"></i>
+            </div>
+            <div class="header-menu">
+                <a href="#tendances">Films</a>
+                <a href="#series">Séries</a>
+                <a href="#populaires">Populaires</a>
+            </div>
+            <div class="header-burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="search">
+            <div class="search-bar">
+                <input placeholder="Rechercher un film"/>
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div id="tendances" class="container-tendances">
+            <div class="container-items">
+                <div class="container-title"><p>Tendances</p></div>
+                <div class="container-group">
+                    <div class="container-btn active"><p>Aujourd'hui</p></div>
+                    <div class="container-btn"><p>Cette semaine</p></div>
+                </div>
+            </div>
+            <div class="card-group"></div>
+        </div>
+        <div id="populaires" class="container-populaires">
+            <div class="container-items">
+                <div class="container-title"><p>Populaires</p></div>
+                <div class="container-group">
+                    <div class="container-btn active"><p>Streaming</p></div>
+                    <div class="container-btn"><p>TV</p></div>
+                    <div class="container-btn"><p>Cinéma</p></div>
+                </div>
+            </div>
+            <div class="card-group"></div>
+        </div>
+    </div>
+</body>
+</html>
